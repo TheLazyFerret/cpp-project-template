@@ -13,8 +13,8 @@
     devShells."x86_64-linux".default = pkgs.mkShell {
       packages = with pkgs; [
         gcc
-        clang
-        clang-tools
+        llvmPackages.clang
+        llvmPackages.clang-tools
         cmake
         gnumake
       ];
