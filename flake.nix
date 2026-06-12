@@ -22,6 +22,8 @@
       shellHook = ''
         clang++ --version
       '';
+      CC="clang";
+      CXX="clang++";
     };
   };
 }
