@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(no_named_yet)
+project(template_name)
 
 # Cplusplus standard.
 set(CMAKE_CXX_STANDARD 23)
