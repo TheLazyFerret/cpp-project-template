@@ -2,23 +2,27 @@
   description = "C++ clang based project flake.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }:
+  outputs = { nixpkgs-unstable, ... }:
     let
-      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      pkgs = nixpkgs-unstable.legacyPackages."x86_64-linux";
     in
   {
     devShells."x86_64-linux".default = pkgs.mkShell {
       packages = with pkgs; [
-        gcc
-        clang
-        clang-tools
-        cmake
-        gnumake
-        gdb
-        valgrind
+        gcc # GNU c/c++ compiler.
+        clang # Clang c/c++ compiler.
+        clang-tools 
+        cmake # Builder.
+        gnumake # Executable generator.
+        gdb # C/C++ debugger.
+        valgrind # Memory and memory leak debugger.
+
+        # Nix tools
+        nil # Analysis assistant.
+        nixd # Nix language server.
       ];
       inputsFrom = [];
       shellHook = ''
@@ -26,6 +30,7 @@
       '';
       CC="clang";
       CXX="clang++";
+      CMAKE_GENERATOR="Unix Makefiles";
     };
   };
 }
