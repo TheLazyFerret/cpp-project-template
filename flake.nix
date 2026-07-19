@@ -31,6 +31,7 @@
       CC="clang";
       CXX="clang++";
       CMAKE_GENERATOR="Unix Makefiles";
+      DCMAKE_BUILD_TYPE="Debug";
     };
   };
 }
