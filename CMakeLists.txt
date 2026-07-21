@@ -32,3 +32,8 @@ target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
 
 ### Allow the usage of relative paths for includes of the project.
 target_include_directories(${PROJECT_NAME} PRIVATE src)
+
+### Macro definitions for the program.
+target_compile_definitions(${PROJECT_NAME} PRIVATE
+  PROJECT_VERSION="${PROJECT_VERSION}" # Version of the program.
+)
