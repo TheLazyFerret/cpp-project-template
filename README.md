@@ -13,4 +13,4 @@ Example usage
 |Dependency 2|_something_|
 
 ## License
-This program is under the [UNLICENSE](./UNLICENSE) License.
+This project is under the [MIT](./LICENSE) License.
