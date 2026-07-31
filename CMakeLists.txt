@@ -4,17 +4,11 @@ cmake_minimum_required(VERSION 3.24)
 ### Project declaration.
 project(template_name
   VERSION 0.0    # Version of the program.
-  LANGUAGES CXX  # Programming language.
+  LANGUAGES CXX  # Programming language of the project.
 )
 
 ### Create the compile_commands.json (mostly for clangd).
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-### Fix for clangd working on nix.
-if(CMAKE_EXPORT_COMPILE_COMMANDS)
-  set(CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES
-  ${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES})
-endif()
 
 ### Create the executable of the program.
 add_executable(${PROJECT_NAME}
