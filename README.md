@@ -6,7 +6,7 @@ Template README.
 Example usage
 ```
 
-## Building.
+## Building
 |dependency|note|
 |----------|----|
 |Dependency 1|_something_|
