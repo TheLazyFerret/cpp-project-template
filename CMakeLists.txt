@@ -34,3 +34,13 @@ target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
 target_compile_definitions(${PROJECT_NAME} PRIVATE
   PROJECT_VERSION="${PROJECT_VERSION}" # Version of the program.
 )
+
+### Testing.
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+  ### Ensure the Boost library for testing exist.
+  find_package(Boost COMPONENTS unit_test_framework REQUIRED)
+  ### Generate the necessary metadata for using ctest.
+  enable_testing()
+  ### Add the testing subdirectories.
+  add_subdirectory(test/module_test)
+endif()
