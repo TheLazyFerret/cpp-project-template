@@ -37,10 +37,10 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
 
 ### Testing.
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-  ### Ensure the Boost library for testing exist.
-  find_package(Boost COMPONENTS unit_test_framework REQUIRED)
   ### Generate the necessary metadata for using ctest.
   enable_testing()
+  ### Ensure the Boost library for testing exist.
+  find_package(Boost COMPONENTS unit_test_framework REQUIRED)
   ### Add the testing subdirectories.
   add_subdirectory(test/module_test)
 endif()
