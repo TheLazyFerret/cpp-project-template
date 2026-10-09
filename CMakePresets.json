@@ -6,6 +6,7 @@
       "displayName": "Base configuration for the rest of presets",
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build/${presetName}",
+      "hidden": true,
       "cacheVariables": {
         "CMAKE_CXX_COMPILER": "clang++"
       }
