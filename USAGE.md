@@ -21,6 +21,16 @@ There is an example of this in the initial [src](./src/).
 In the root CMakeLists.txt, create the neccesary `add_subdirectory()` functions, and link the
 static libraries to the executable.
 
+## Testing
+
+I decided to use Boost::unit_test for testing. Due the _modules_ are defined as static libraries,
+we avoid compiling the same source multiple times.
+
+By default, the test will be enabled only in Debug build. You can easily call them _(if you used the `devel`
+preset)_ `with ctest --test-dir build/develop`
+
+Check the directory [test/module_test](./test/module_test) for an usage example.
+
 ## compile_commands.json
 
 For clangd correctly working, it is necessary to copy (or better symlink)
